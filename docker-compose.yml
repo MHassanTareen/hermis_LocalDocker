@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+
+  hermes909:
+    image: ubuntu:22.04
+    container_name: hermes909
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    restart: always
+    volumes:
+      - hermes909_config:/root/.hermes
+    networks:
+      - hermes909_net
+
+networks:
+  hermes909_net:
+    driver: bridge
+
+volumes:
+  hermes909_config:
